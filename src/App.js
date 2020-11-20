@@ -1,10 +1,11 @@
+import { ItemCard } from "./components";
+
 const App = () => {
-  
   return (
     <div>
-      <h1>Leg Up Legal Home Page</h1>
+      <ItemCard />
     </div>
   );
-}
+};
 
 export default App;
