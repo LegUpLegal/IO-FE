@@ -1,24 +1,50 @@
-export default [
+const dummyData = [
   {
     title: "Johnson v. Rogers",
     tasks: ["get docs", "call clients", "prepare litigation"],
     status: "in progress",
     folders: [
       {
+        folderId: "1",
         title: "folder 1",
-        files: ["clientinfo.txt", "defendantinfo.txt"],
+        files: [
+          { fileId: "file-1", title: "clientinfo.txt" },
+          { fileId: "file-2", title: "defendantinfo.txt" },
+        ],
       },
       {
+        folderId: "2",
         title: "folder 2",
-        files: ["logo.png"],
+        files: [
+          {
+            fileId: "file-3",
+            title: "logo.png",
+          },
+        ],
       },
       {
+        folderId: "3",
         title: "folder 3",
-        files: ["stats.csv"],
+
+        files: [
+          {
+            fileId: "file-4",
+            title: "stats.csv",
+          },
+        ],
       },
     ],
-    hearingDate: "November 27th, 2020",
-    hearingTime: "1:00 - 1:30 pm",
-    zoomLink: "zoom.us/123456",
+    hearingInformation: {
+      hearingInformation: {
+        hearingType: "N/A",
+        dialInNumber: 3336667789,
+      },
+      depostionInformation: {
+        date: "TBD",
+        time: "TBD",
+        zoomLink: "TBD",
+      },
+    },
   },
 ];
+export default dummyData;
