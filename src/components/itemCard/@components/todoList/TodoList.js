@@ -1,15 +1,30 @@
 import React from "react";
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  Checkbox,
+  FormGroup,
+  FormControlLabel,
+} from "@material-ui/core";
+import { useStyles } from "../../../../hooks";
 
 const TodoList = ({ tasks }) => {
+  console.log(tasks);
+  const styles = useStyles();
   return (
-    <>
-      <h1>TO-DO-LIST</h1>
-      <ul>
-        {tasks.map((task, i) => {
-          return <li key={i}>{task}</li>;
-        })}
-      </ul>
-    </>
+    <Card>
+      <CardHeader className={styles.cardHeaderTitle} title="TO-DO-LIST" />
+      <CardContent>
+        <FormGroup>
+          {tasks.map((task, i) => {
+            return (
+              <FormControlLabel control={<Checkbox />} label={task} key={i} />
+            );
+          })}
+        </FormGroup>
+      </CardContent>
+    </Card>
   );
 };
 

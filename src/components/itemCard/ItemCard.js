@@ -13,6 +13,7 @@ const ItemCard = () => {
       <CardContent>
         <CaseFiles folders={cardData.folders} status={cardData.status}/>
         <Divider /> 
+        <TodoList tasks={cardData.tasks}/>
       </CardContent>
     </Card>
     // <Box display="flex" flexDirection="column" justifyContent="center" alignContent="center">
