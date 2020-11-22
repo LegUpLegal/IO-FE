@@ -35,15 +35,20 @@ const dummyData = [
       },
     ],
     hearingInformation: {
-      hearingInformation: {
-        hearingType: "N/A",
-        dialInNumber: 3336667789,
-      },
-      depostionInformation: {
-        date: "TBD",
-        time: "TBD",
-        zoomLink: "TBD",
-      },
+      hearingType: "N/A",
+      department: 'domestic',
+      judge: 'Smith',
+      date: '11/26/2020',
+      time: '1100',
+      address: '123 court way, LA California, 11111',
+      dialInNumber: 3336667789,
+    },
+    depositionInformation: {
+      deponent: 'deponent',
+      date: "TBD",
+      time: "TBD",
+      address: '1133 justice st, LA California, 11111',
+      zoomLink: "TBD",
     },
   },
 ];

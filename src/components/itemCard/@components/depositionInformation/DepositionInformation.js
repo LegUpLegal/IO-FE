@@ -5,38 +5,29 @@ import {
   CardHeader,
   CardContent,
   Typography,
-  Button
+  Button,
 } from "@material-ui/core";
 import { useStyles } from "../../../../hooks";
 
-const HearingInformation = ({ hearingInformation }) => {
+const DepositionInformation = ({ depositionInformation }) => {
   const styles = useStyles();
-  const {
-    address,
-    hearingType,
-    department,
-    judge,
-    dialInNumber,
-    date,
-    time,
-  } = hearingInformation;
-
+  console.log(depositionInformation);
+  const { deponent, date, time, address, zoomLink } = depositionInformation;
   return (
     <Card className={styles.cardSection}>
       <CardHeader
         className={styles.cardHeaderTitle}
-        title="NEXT HEARING INFORMATION"
+        title="NEXT DEPOSITION INFORMATION"
       />
+
       <CardContent>
         <Box display="flex">
           <Box mb={3}>
-            <Typography>Hearing Type: {hearingType}</Typography>
-            <Typography> Department: {department}</Typography>
-            <Typography>Judge: {judge}</Typography>
-            <Typography>Date: {date}</Typography>
+            <Typography>Deponent: {deponent}</Typography>
+            <Typography> Date: {date}</Typography>
             <Typography>Time: {time}</Typography>
-            <Typography>Dial-In-Number: {dialInNumber}</Typography>
             <Typography>Address: {address}</Typography>
+            <Typography>Zoom Link: {zoomLink}</Typography>
           </Box>
         </Box>
         <Button variant="contained" color="primary">
@@ -47,4 +38,4 @@ const HearingInformation = ({ hearingInformation }) => {
   );
 };
 
-export default HearingInformation;
+export default DepositionInformation;

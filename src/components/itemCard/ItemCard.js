@@ -1,31 +1,37 @@
-import React, {useEffect} from "react";
-import { CaseFiles, HearingInformation, TodoList } from "./@components";
+import React, { useEffect } from "react";
+import {
+  CaseFiles,
+  DepositionInformation,
+  HearingInformation,
+  TodoList,
+} from "./@components";
 import dummyData from "../../dummyData";
-import { Typography, Card, CardHeader, CardContent, Divider, Box } from "@material-ui/core";
+import {
+  Typography,
+  Card,
+  CardHeader,
+  CardContent,
+  Divider,
+} from "@material-ui/core";
 import mondaySdk from "monday-sdk-js";
 
 const monday = mondaySdk();
 
 const ItemCard = () => {
-
   useEffect(() => {
-    monday.listen('context', res => {
-      monday.api()
-    })
-  }, [])
+    monday.listen("context", (res) => {
+      monday.api();
+    });
+  }, []);
 
-  monday.setToken(process.env.REACT_APP_MONDAY_TOKEN)
-  monday.api(`{
+  monday.setToken(process.env.REACT_APP_MONDAY_TOKEN);
+  monday
+    .api(
+      `{
   me {
     name
   }
-  boards(limit: 1) {
-    name
-    columns {
-      title
-    }
-  }
-  boards(limit: 1) {
+  boards(limit: 10) {
     name
     columns {
       title
@@ -49,17 +55,31 @@ const ItemCard = () => {
     }
   }
 }
-`).then(data => console.log(data))
+`
+    )
+    .then((data) => console.log(data));
   console.log(dummyData);
   const cardData = dummyData[0];
+  const {
+    hearingInformation,
+    depositionInformation,
+    folders,
+    tasks,
+    title,
+    status,
+  } = cardData;
   return (
-    <Card style={{background: "lightGray"}} raised>
-      <CardHeader title={<Typography variant="h2">{cardData.title}</Typography>}/>
+    <Card style={{ background: "lightGray" }} raised>
+      <CardHeader title={<Typography variant="h2">{title}</Typography>} />
       <Divider />
       <CardContent>
-        <CaseFiles folders={cardData.folders} status={cardData.status}/>
-        <Divider /> 
-        <TodoList tasks={cardData.tasks}/>
+        <CaseFiles folders={folders} status={status} />
+        <Divider />
+        <TodoList tasks={tasks} />
+        <Divider />
+        <HearingInformation hearingInformation={hearingInformation} />
+        <Divider />
+        <DepositionInformation depositionInformation={depositionInformation} />
       </CardContent>
     </Card>
     // <Box display="flex" flexDirection="column" justifyContent="center" alignContent="center">
