@@ -13,13 +13,17 @@ const TodoList = ({ tasks }) => {
   console.log(tasks);
   const styles = useStyles();
   return (
-    <Card>
+    <Card className={styles.cardSection}>
       <CardHeader className={styles.cardHeaderTitle} title="TO-DO-LIST" />
       <CardContent>
         <FormGroup>
           {tasks.map((task, i) => {
             return (
-              <FormControlLabel control={<Checkbox />} label={task} key={i} />
+              <FormControlLabel
+                control={<Checkbox color="primary" />}
+                label={task}
+                key={i}
+              />
             );
           })}
         </FormGroup>

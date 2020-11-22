@@ -1,3 +1,4 @@
+import React from 'react'
 import { ItemCard } from "./components";
 import { Grid } from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core/styles";
@@ -6,9 +7,7 @@ import { useStyles } from "./hooks";
 
 const theme = createMuiTheme({
   typography: {
-    fontFamily: [
-      "Roboto"
-    ].join(","),
+    fontFamily: ["Roboto"].join(","),
   },
 });
 
