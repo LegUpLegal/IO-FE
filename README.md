@@ -26,47 +26,50 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Overview
+This is the "Quickstart React" example Monday app. 
+<br>It can be used as a board view or dashboard widget, connected to a board and render data from the board using settings.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Getting Started with Create React App
 
-### `npm run eject`
+<br>This app demonstrates how to use: 
+- [settings](https://github.com/mondaycom/monday-sdk-js#mondaygettype-params--) 
+- [context](https://github.com/mondaycom/monday-sdk-js#mondaygettype-params--) 
+- [API](https://github.com/mondaycom/monday-sdk-js#mondayapiquery-options--)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<br>You can find more info in our QuickStart guide [here](https://monday.com/developers/apps/quickstart-view/)
+<br /> ![Screenshot](https://dapulse-res.cloudinary.com/image/upload/w_900/v1591485466/remote_mondaycom_static/developers/screenshots/final_view.gif)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Run the project
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+In the project directory, you should run:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### `npm install`
 
-## Learn More
+And then to run an application with automatic virtual ngrok tunnel, run:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `npm start`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Visit http://localhost:4040/status and under "command_line section" find the URL. This is the public URL of your app, so you can use it to test it.
+F.e.: https://021eb6330099.ngrok.io
 
-### Code Splitting
+## Configure Monday App 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Open monday.com, login to your account and go to a "Developers" section.
+2. Create a new "QuickStart View Example App"
+3. Open "OAuth & Permissions" section and add "boards:read" scope
+4. Open "Features" section and create a new "Boards View" feature
+5. Open "View setup" tab and fulfill in "Custom URL" field your ngrok public URL, which you got previously (f.e. https://021eb6330099.ngrok.io)
+6. Click "Boards" button and choose one of the boards with some data in it.
+7. Click "Preview button"
+8. Enjoy the Quickstart View Example app!
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Release your app
+1. Run script
+### `npm run build`
+2. Zip your "./build" folder
+3. Open "Build" tab in your Feature
+4. Click "New Build" button
+5. Click "Upload" radio button and upload zip file with your build
+6. Go to any board and add your just released view
+7. Enjoy!
