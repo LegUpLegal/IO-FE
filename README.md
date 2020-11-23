@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8332805d-cead-4640-88ac-0898fb7fb3d8/deploy-status)](https://app.netlify.com/sites/leg-up-legal/deploys)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
