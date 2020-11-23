@@ -10,7 +10,7 @@ import {
 import { useStyles } from "../../../../hooks";
 
 const TodoList = ({ tasks }) => {
-  console.log(tasks);
+  
   const styles = useStyles();
   return (
     <Card className={styles.cardSection}>

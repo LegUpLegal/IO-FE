@@ -11,7 +11,7 @@ import { useStyles } from "../../../../hooks";
 
 const DepositionInformation = ({ depositionInformation }) => {
   const styles = useStyles();
-  console.log(depositionInformation);
+  
   const { deponent, date, time, address, zoomLink } = depositionInformation;
   return (
     <Card className={styles.cardSection}>
