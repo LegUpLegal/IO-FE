@@ -17,12 +17,13 @@ const api = {
           id
           type
         }
-        items {
+        items {          
           name
           group {
             id
           }
           column_values {
+            title
             id
             value
             text

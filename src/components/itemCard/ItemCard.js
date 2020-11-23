@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import {
   CaseFiles,
   DepositionInformation,
@@ -17,17 +17,18 @@ import {
 import { api } from "../../api";
 
 const ItemCard = () => {
-  const [data, setData] = useState([]);
+  const [item, setItem] = useState([]);
+  // const [status, setStatus] = useState("");
 
   useEffect(() => {
     async function getData() {
       const data = await api.fetchBoards();
-      setData(data);
+      setItem(data.data.boards[0].items[0]);
     }
     getData();
   }, []);
 
-  console.log(data);
+  console.log(item);
 
   const cardData = dummyData[0];
   const {
@@ -35,13 +36,23 @@ const ItemCard = () => {
     depositionInformation,
     folders,
     tasks,
-    title,
-    status,
   } = cardData;
+
+  if (item.length) {
+    const statusItem =
+      item?.column_values.filter((entry) => entry.title === "status")[0] ?? "";
+    console.log(statusItem)
+  }
+
+  const status = useMemo(() => {
+    return item?.column_values?.filter(entry => entry.title === "Status")[0].text ?? ""
+  }, [item])
+
+  console.log(status)
 
   return (
     <Card style={{ background: "lightGray" }} raised>
-      <CardHeader title={<Typography variant="h2">{title}</Typography>} />
+      <CardHeader title={<Typography variant="h2">{item.name}</Typography>} />
       <Divider />
       <CardContent>
         <CaseFiles folders={folders} status={status} />
