@@ -1,4 +1,5 @@
 import mondaySdk from "monday-sdk-js";
+import boardQuery from "./@utils/boardsQuery";
 
 const monday = mondaySdk();
 monday.setToken(process.env.REACT_APP_MONDAY_TOKEN);
@@ -6,34 +7,7 @@ monday.setToken(process.env.REACT_APP_MONDAY_TOKEN);
 const api = {
   async fetchBoards() {
     return new Promise((resolve) => {
-      monday
-        .api(
-          `{
-      
-      boards(limit: 3) {
-        name
-        columns {
-          title
-          id
-          type
-        }
-        items {          
-          name
-          group {
-            id
-          }
-          column_values {
-            title
-            id
-            value
-            text
-          }
-        }
-      }
-    }
-    `
-        )
-        .then((res) => resolve(res));
+      monday.api(boardQuery).then((res) => resolve(res));
     });
   },
 };
