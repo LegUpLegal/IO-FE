@@ -1,6 +1,11 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8332805d-cead-4640-88ac-0898fb7fb3d8/deploy-status)](https://app.netlify.com/sites/leg-up-legal/deploys)
+
 ## Overview
 This is the "Quickstart React" example Monday app. 
 <br>It can be used as a board view or dashboard widget, connected to a board and render data from the board using settings.
+=======
+
+# Getting Started with Create React App
 
 <br>This app demonstrates how to use: 
 - [settings](https://github.com/mondaycom/monday-sdk-js#mondaygettype-params--) 
